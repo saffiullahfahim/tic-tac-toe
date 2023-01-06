@@ -90,7 +90,7 @@ export default function Game() {
       nextMove = [...eachMoves.slice(0, currentMove + 1), [row, col]];
       nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     } else {
-      nextMove = [[row, col, ...eachMoves.slice(0, currentMove + 1)]];
+      nextMove = [[row, col, ...eachMoves.slice(currentMove, history.length)]];
       nextHistory = [
         nextSquares,
         ...history.slice(currentMove, history.length),
